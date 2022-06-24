@@ -17,7 +17,7 @@ export const Home=({route})=>{
   console.log(listOfUsers)
 
   const deleteUser=(id)=>{
-    Axios.delete(`https://database-hulk.herokuapp.com/deleteUser:${id}`).then(response=>{
+    Axios.delete(`https://database-hulk.herokuapp.com/deleteUser/${id}`).then(response=>{
       setListOfUsers(listOfUsers.filter((val)=>{
         return val._id !=id;
       })
@@ -35,46 +35,6 @@ export const Home=({route})=>{
  })
 }  
 
-const [object,setobject]=useState([
-  {
-      name:"Hammad",
-      age:21,
-      email:"zhammad",
-      image:"https://picsum.photos/200/100"
-  },
-  {
-      name:"Hulk",
-      age:51,
-      email:"zhulk",
-      image:"https://picsum.photos/200/100"
-
-  },
-  {
-  name:"Saad",
-  age:21,
-  email:"Saadi",
-  image:"https://picsum.photos/200/100"
-  }
-  ,
-  {
-  name:"Saad",
-  age:21,
-  email:"Saadi",
-  image:"https://picsum.photos/200/100"
-  }
-  ,
-  {
-  name:"Saad",
-  age:21,
-  email:"Saadi",
-  image:"https://picsum.photos/200/100"
-  }
-
-
-])
-
-    
-    
    return(
         <>
         <div style={{display:'flex',flexWrap:'wrap',alignContent:'center',justifyContent:"space-around"}}>
