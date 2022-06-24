@@ -1,13 +1,15 @@
 import '../App.css';
 import { useState,useEffect } from "react";
+
+import Axios from 'axios';
 export const Form=()=>{
     const [name, setname] = useState("")
     const [age, setage] = useState()
-    const [email, setemail] = useState("")
+    const [username, setusername] = useState("")
     const [user ,setuser]=useState({
         named:"",
-        aged:25,
-        emaild:"",
+        aged:0,
+        username:"",
     })
 
    const onChange1=(val)=>{
@@ -23,7 +25,7 @@ export const Form=()=>{
 
 const onChange3=(val)=>{
     console.log(val.target.value)
-    setemail(val.target.value)
+    setusername(val.target.value)
    
 }
 const onClick=()=>{
@@ -38,18 +40,26 @@ useEffect(() => {
     setuser({
         named:name,
         aged:age,
-        emaild:email
+        username:username
     })
 
   return () => {
     
   }
-}, [name,age,email])
+}, [name,age,username])
 
-
+const createUser = () => {
+    Axios.post("https://database-hulk.herokuapp.com//createUser", {
+      name,
+      age,
+      username,
+    }).then((response) => {
+     console.log("hello")
+    });
+  };
+ 
     return(
-         <>
-        
+         <>  
             <div style={{display:"flex",justifyContent:"center",alignItems:'center',flexWrap:'wrap'}}>
                    <div style={{borderStyle:"solid",borderRadius:"25px",padding:"25px",marginTop:"10px"}}>
                         <h4 style={{marginBottom:"10px",padding:"10px",marginTop:"10px"}}>Name:</h4>
@@ -59,7 +69,7 @@ useEffect(() => {
                          <h4 style={{marginBottom:"10px" ,padding:"10px"}}>email:</h4>
                         <input type="text" placeholder="enter your age" onChange={onChange3} style={{minHeight:"25px",padding:"10px"}} ></input>
                         <div style={{display:'flex',justifyContent:'center' , marginTop:'10px'}}>
-                        <button className="btn" style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={onClick}>submit</button>
+                        <button className="btn" style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={createUser}>submit</button>
                         </div>
                    </div>
             </div>

@@ -28,11 +28,12 @@
 .link:hover{
 
  cursor: pointer;
-  color: rgb(202, 202, 11);
+  color: rgba(0, 0, 0, 0.582);
 }
 .nav:hover{
   cursor: pointer;
-  color: yellow;
+  color: black;
+  text-decoration-line: underline;
 }
 
 .sea{
@@ -51,4 +52,13 @@
   padding: 10px;
   margin: 10px
 }
+.cerd{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.cerd:hover{
+ 
+  border-style:solid;
+   border-radius:10px;
+   border-color:DodgerBlue
+}

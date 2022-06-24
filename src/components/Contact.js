@@ -12,7 +12,7 @@ export const Contact=()=>{
     return(
          <>
          <div><button onClick={onClick} >toggle</button></div>
-         {toggle==true?<div>hello contact</div> :  {}   }
+         {toggle==true?<div>hello contact</div> : <div></div>  }
          <div style={{margin:10}}>Contact</div>
          <Link className='link' style={{backgroundColor:'dodgerblue',padding:10,textDecoration:'none'}} to='news'>News</Link>
          <Link className='link' style={{backgroundColor:'dodgerblue',padding:10,textDecoration:'none'}} to='info'>info</Link> 
