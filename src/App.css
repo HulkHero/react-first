@@ -1,7 +1,17 @@
 
 .btn{
-  background-color:rgb(30, 143, 255);
-  color:white;
+ 
+ 
+  background-color: white;
+  color: black;
+}
+.info {
+  border-color: #1e82d4;
+  color: rgb(14, 90, 165)
+}
+.info:hover {
+  background: #2196F3;
+  color: white;
 }
 
 
@@ -10,7 +20,6 @@
    
     padding: 5px;
     cursor: pointer;
-    background-color: black;
 }
 
 .nav{

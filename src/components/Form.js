@@ -71,7 +71,7 @@ const createUser = () => {
                          <h4 style={{marginBottom:"10px" ,padding:"10px"}}>email:</h4>
                         <input type="text" placeholder="enter your age" onChange={onChange3} style={{minHeight:"25px",padding:"10px"}} ></input>
                         <div style={{display:'flex',justifyContent:'center' , marginTop:'10px'}}>
-                        <button className="btn" disabled={text} style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={createUser}>{text==true?'Saved':'Submit'}</button>
+                        <button className="btn info" disabled={text} style={{minHeight:'40px',position:'center'}}  onClick={createUser}>{text==true?'Saved':'Submit'}</button>
                         </div>
                    </div>
             </div>

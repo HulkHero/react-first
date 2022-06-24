@@ -44,7 +44,7 @@ export const Home=({route})=>{
                      <div>Name: {element.name}</div>
                      <div>Age: {element.age}</div>
                      <div>Email: {element.username}</div>
-                     <div><button className="btn" style={{position:'relative',minHeight:'30px',left:'36%',borderRadius:'10px'}}  onClick={()=>deleteUser(element._id)}>Delete</button></div>
+                     <div><button className="btn info" style={{position:'relative',minHeight:'30px',left:'36%',borderRadius:'10px'}}  onClick={()=>deleteUser(element._id)}>Delete</button></div>
                   </div>
                   </div>
                 )
