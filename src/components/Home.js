@@ -38,7 +38,7 @@ export const Home=({route})=>{
    return(
         <>
         <div style={{display:'flex',flexWrap:'wrap',alignContent:'center',justifyContent:"space-around"}}>
-            { object.map((element)=>{
+            { listOfUsers.map((element)=>{
                 return(
                   <div style={{width:'300px',height:'270px'}}>
                   <div className='cerd' style={{margin:"15px" ,padding:"10px" }} >
