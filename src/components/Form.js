@@ -54,7 +54,7 @@ const createUser = () => {
       age,
       username,
     }).then((response) => {
-     console.log("hello")
+     alert("data saved")
     });
   };
  
