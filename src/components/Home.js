@@ -35,20 +35,58 @@ export const Home=({route})=>{
  })
 }  
 
+const [object,setobject]=useState([
+  {
+      name:"Hammad",
+      age:21,
+      email:"zhammad",
+      image:"https://picsum.photos/200/100"
+  },
+  {
+      name:"Hulk",
+      age:51,
+      email:"zhulk",
+      image:"https://picsum.photos/200/100"
+
+  },
+  {
+  name:"Saad",
+  age:21,
+  email:"Saadi",
+  image:"https://picsum.photos/200/100"
+  }
+  ,
+  {
+  name:"Saad",
+  age:21,
+  email:"Saadi",
+  image:"https://picsum.photos/200/100"
+  }
+  ,
+  {
+  name:"Saad",
+  age:21,
+  email:"Saadi",
+  image:"https://picsum.photos/200/100"
+  }
+
+
+])
+
     
     
    return(
         <>
         <div style={{display:'flex',flexWrap:'wrap',alignContent:'center',justifyContent:"space-around"}}>
-            { listOfUsers.map((element)=>{
+            { object.map((element)=>{
                 return(
-                  <div style={{width:'300px',height:'200px'}}>
+                  <div style={{width:'300px',height:'270px'}}>
                   <div className='cerd' style={{margin:"15px" ,padding:"10px" }} >
                   <div><img src={"https://picsum.photos/250/100"} ></img></div>
                      <div>Name: {element.name}</div>
                      <div>Age: {element.age}</div>
                      <div>Email: {element.username}</div>
-                     <div><button className="btn" style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={deleteUser(element._id)}>Delete</button></div>
+                     <div><button className="btn" style={{position:'relative',minHeight:'30px',left:'36%',borderRadius:'10px'}}  onClick={deleteUser(element._id)}>Delete</button></div>
                   </div>
                   </div>
                 )

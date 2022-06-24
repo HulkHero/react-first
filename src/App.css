@@ -6,9 +6,8 @@
 
 .btn:hover{
     color: rgb(235, 235, 235);
-    font-size: larger;
+   
     padding: 5px;
-    transform: scale(1.1);
     cursor: pointer;
     background-color: black;
 }
