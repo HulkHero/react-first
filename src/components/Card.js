@@ -1,8 +1,6 @@
 import '../App.css';
 export const Card=({user})=>{
     const {name,age,email,image}=user
-    
-
     return(
          <>
          <div style={{borderStyle:"solid", borderRadius:"10px",borderColor:"DodgerBlue",margin:"15px" ,padding:"10px" }} >
