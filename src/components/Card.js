@@ -1,6 +1,11 @@
+import { Axios } from 'axios';
 import '../App.css';
 export const Card=({udata})=>{
    // const {name,age,email,image}=user
+
+   const deleteUser=(id)=>{
+      Axios.delete('')
+   }
     return(
          <>
          <div style={{width:'300px',height:'200px'}}>
@@ -9,6 +14,7 @@ export const Card=({udata})=>{
             <div>Name: {udata.name}</div>
             <div>Age: {udata.age}</div>
             <div>Email: {udata.username}</div>
+            <div><button className="btn" style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={deleteUser(udata._id)}>Delete</button></div>
          </div>
          </div>
          </>

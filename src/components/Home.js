@@ -16,22 +16,14 @@ export const Home=({route})=>{
   }, []);
   console.log(listOfUsers)
 
-  const createUser = () => {
-    Axios.post("https://database-hulk.herokuapp.com/createUser", {
-      name,
-      age,
-      username,
-    }).then((response) => {
-      setListOfUsers([
-        ...listOfUsers,
-        {
-          name,
-          age,
-          username,
-        },
-      ]);
-    });
-  };
+  const deleteUser=(id)=>{
+    Axios.delete(`https://database-hulk.herokuapp.com/deleteUser:${id}`).then(response=>{
+      setListOfUsers(listOfUsers.filter((val)=>{
+        return val._id !=id;
+      })
+        )
+    })
+  }
  const onUpdate=(id)=>{
   const newAge=prompt("enter new age")
   Axios.put('https://database-hulk.herokuapp.com/updateUser',{newAge: newAge,id:id}).then(() => {
@@ -48,9 +40,17 @@ export const Home=({route})=>{
    return(
         <>
         <div style={{display:'flex',flexWrap:'wrap',alignContent:'center',justifyContent:"space-around"}}>
-            { listOfUsers.map((user)=>{
+            { listOfUsers.map((element)=>{
                 return(
-                    <Card udata={user} ></Card>
+                  <div style={{width:'300px',height:'200px'}}>
+                  <div className='cerd' style={{margin:"15px" ,padding:"10px" }} >
+                  <div><img src={"https://picsum.photos/250/100"} ></img></div>
+                     <div>Name: {element.name}</div>
+                     <div>Age: {element.age}</div>
+                     <div>Email: {element.username}</div>
+                     <div><button className="btn" style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={deleteUser(element._id)}>Delete</button></div>
+                  </div>
+                  </div>
                 )
             })
             }
