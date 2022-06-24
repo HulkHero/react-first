@@ -10,14 +10,14 @@ export const Home=({route})=>{
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    Axios.get("https://database-hulk.herokuapp.com//getUsers").then((response) => {
+    Axios.get("https://database-hulk.herokuapp.com/getUsers").then((response) => {
       setListOfUsers(response.data);
     });
   }, []);
   console.log(listOfUsers)
 
   const createUser = () => {
-    Axios.post("https://database-hulk.herokuapp.com//createUser", {
+    Axios.post("https://database-hulk.herokuapp.com/createUser", {
       name,
       age,
       username,
@@ -34,7 +34,7 @@ export const Home=({route})=>{
   };
  const onUpdate=(id)=>{
   const newAge=prompt("enter new age")
-  Axios.put('https://database-hulk.herokuapp.com//updateUser',{newAge: newAge,id:id}).then(() => {
+  Axios.put('https://database-hulk.herokuapp.com/updateUser',{newAge: newAge,id:id}).then(() => {
       setListOfUsers(listOfUsers.map((user)=>{
     
         // eslint-disable-next-line eqeqeq

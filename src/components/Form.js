@@ -49,7 +49,7 @@ useEffect(() => {
 }, [name,age,username])
 
 const createUser = () => {
-    Axios.post("https://database-hulk.herokuapp.com//createUser", {
+    Axios.post("https://database-hulk.herokuapp.com/createUser", {
       name,
       age,
       username,
