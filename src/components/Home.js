@@ -5,9 +5,7 @@ import Axios from "axios"
 
 export const Home=({route})=>{
     const [listOfUsers, setListOfUsers] = useState([]);
-  const [name, setName] = useState("");
-  const [age, setAge] = useState(0);
-  const [username, setUsername] = useState("");
+ 
 
   useEffect(() => {
     Axios.get("https://database-hulk.herokuapp.com/getUsers").then((response) => {
