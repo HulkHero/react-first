@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 
 import Axios from 'axios';
 export const Form=()=>{
+  const[text, setText]=useState(false)
     const [name, setname] = useState("")
     const [age, setage] = useState()
     const [username, setusername] = useState("")
@@ -54,7 +55,8 @@ const createUser = () => {
       age,
       username,
     }).then((response) => {
-     alert("data saved")
+     alert("data saved");
+     setText(true)
     });
   };
  
@@ -69,7 +71,7 @@ const createUser = () => {
                          <h4 style={{marginBottom:"10px" ,padding:"10px"}}>email:</h4>
                         <input type="text" placeholder="enter your age" onChange={onChange3} style={{minHeight:"25px",padding:"10px"}} ></input>
                         <div style={{display:'flex',justifyContent:'center' , marginTop:'10px'}}>
-                        <button className="btn" style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={createUser}>submit</button>
+                        <button className="btn" disabled={text} style={{minHeight:'40px',position:'center',borderRadius:'10px'}}  onClick={createUser}>{text==true?'Saved':'Submit'}</button>
                         </div>
                    </div>
             </div>
